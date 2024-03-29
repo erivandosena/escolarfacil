@@ -1,0 +1,245 @@
+openapi: 3.0.0
+info:
+  title: API de Alunos
+  description: Esta é a API para gerenciamento de alunos.
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:3000/'
+paths:
+  /api/alunos:
+    get:
+      summary: Lista todos os alunos
+      responses:
+        '200':
+          description: Uma lista de alunos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aluno'
+    post:
+      summary: Cria um novo aluno
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aluno'
+      responses:
+        '201':
+          description: Aluno criado
+  /api/alunos/{id}:
+    get:
+      summary: Obtém um aluno pelo ID
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Detalhes do aluno
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aluno'
+    put:
+      summary: Atualiza um aluno pelo ID
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aluno'
+      responses:
+        '200':
+          description: Aluno atualizado
+    delete:
+      summary: Exclui um aluno pelo ID
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Aluno excluído
+components:
+  schemas:
+    Aluno:
+      type: object
+      properties:
+        matricula:
+          type: string
+        nome:
+          type: string
+        turma:
+          type: string
+        curso:
+          type: string
+        turno:
+          type: string
+        sexo:
+          type: string
+        nascimento:
+          type: string
+          format: date
+        nacionalidade:
+          type: string
+        naturalidade:
+          type: string
+        religiao:
+          type: string
+        endereco:
+          type: object
+          properties:
+            rua:
+              type: string
+            numero:
+              type: string
+            complemento:
+              type: string
+            bairro:
+              type: string
+            cidade:
+              type: string
+            estado:
+              type: string
+            cep:
+              type: string
+        telefone:
+          type: string
+        email:
+          type: string
+        identidade:
+          type: string
+        cpf:
+          type: string
+        colegioOrigem:
+          type: object
+          properties:
+            nome:
+              type: string
+            cidade:
+              type: string
+            estado:
+              type: string
+            telefone:
+              type: string
+        dadosSaude:
+          type: object
+          properties:
+            problemasSaude:
+              type: string
+            remediosProibidos:
+              type: string
+            planoSaude:
+              type: string
+            telefoneEmergencia:
+              type: string
+            procedimentosEmergencia:
+              type: string
+            tipoSangue:
+              type: string
+            fatorRh:
+              type: string
+            nomeMedico:
+              type: string
+            telefoneMedico:
+              type: string
+        dadosPai:
+          type: object
+          properties:
+            nome:
+              type: string
+            vivo:
+              type: boolean
+            trabalho:
+              type: object
+              properties:
+                local:
+                  type: string
+                endereco:
+                  type: string
+                profissao:
+                  type: string
+                graduacao:
+                  type: string
+                telefone:
+                  type: string
+        dadosMae:
+          type: object
+          properties:
+            nome:
+              type: string
+            viva:
+              type: boolean
+            trabalho:
+              type: object
+              properties:
+                local:
+                  type: string
+                endereco:
+                  type: string
+                profissao:
+                  type: string
+                graduacao:
+                  type: string
+                telefone:
+                  type: string
+        dadosResponsavel:
+          type: object
+          properties:
+            nome:
+              type: string
+            cpf:
+              type: string
+            trabalho:
+              type: object
+              properties:
+                local:
+                  type: string
+                endereco:
+                  type: string
+                profissao:
+                  type: string
+                graduacao:
+                  type: string
+                orgao:
+                  type: string
+                uf:
+                  type: string
+                telefoneTrabalho:
+                  type: string
+                ramal:
+                  type: string
+            enderecoResidencial:
+              type: object
+              properties:
+                rua:
+                  type: string
+                numero:
+                  type: string
+                complemento:
+                  type: string
+                bairro:
+                  type: string
+                cidade:
+                  type: string
+                estado:
+                  type: string
+                cep:
+                  type: string
+            telefone:
+              type: string
+            celular:
+              type: string

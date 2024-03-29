@@ -1,0 +1,30 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+# yarn.lock
+.dockerignore
+Dockerfile
+docker-compose.yml
+.git/
+.gitignore
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+__tests__/
+__mocks__/
+# .env
+.env.local
+.env.development
+.env.test
+.env.production
+README.md
+CHANGELOG.md
+LICENSE
+backend.zip
+dist/
+build/
+*.log
+*.tmp
+*.temp
+public/

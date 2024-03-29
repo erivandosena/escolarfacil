@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação da API de Alunos - EscolarFácil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .endpoint {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .endpoint h2 {
+            margin-top: 0;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        .table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>API de Alunos - Documentação</h1>
+        <p><a href="/api-docs/">OpenAPI</a> é uma API que permite gerenciar as informações dos alunos.</p>
+
+        <div class="endpoint">
+            <h2>POST /alunos</h2>
+            <p>Cria um novo aluno.</p>
+            <table class="table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                <!-- Aluno -->
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>ID do aluno a ser atualizado</td>
+                </tr>
+                <tr>
+                    <td>matricula</td>
+                    <td>String</td>
+                    <td>Número de matrícula do aluno</td>
+                </tr>
+                <tr>
+                    <td>nome</td>
+                    <td>String</td>
+                    <td>Nome completo do aluno</td>
+                </tr>
+                <tr>
+                    <td>turma</td>
+                    <td>String</td>
+                    <td>Turma do aluno</td>
+                </tr>
+                <tr>
+                    <td>curso</td>
+                    <td>String</td>
+                    <td>Curso em que o aluno está matriculado</td>
+                </tr>
+                <tr>
+                    <td>turno</td>
+                    <td>String</td>
+                    <td>Turno do aluno</td>
+                </tr>
+
+                <tr>
+                    <td>sexo</td>
+                    <td>String</td>
+                    <td>Sexo do aluno</td>
+                </tr>
+                <tr>
+                    <td>nascimento</td>
+                    <td>Date</td>
+                    <td>Data de nascimento do aluno</td>
+                </tr>
+                <tr>
+                    <td>nacionalidade</td>
+                    <td>String</td>
+                    <td>Nacionalidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>naturalidade</td>
+                    <td>String</td>
+                    <td>Naturalidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>religiao</td>
+                    <td>String</td>
+                    <td>Religião do aluno</td>
+                </tr>
+                <tr>
+                    <td>telefone</td>
+                    <td>String</td>
+                    <td>Telefone de contato do aluno</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Email do aluno</td>
+                </tr>
+                <tr>
+                    <td>identidade</td>
+                    <td>String</td>
+                    <td>Número da identidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>cpf</td>
+                    <td>String</td>
+                    <td>CPF do aluno</td>
+                </tr>
+                <!-- Endereço do aluno -->
+                <tr>
+                    <td>rua</td>
+                    <td>String</td>
+                    <td>Rua do endereço do aluno</td>
+                </tr>
+                <tr>
+                    <td>numero</td>
+                    <td>String</td>
+                    <td>Número da residência do aluno</td>
+                </tr>
+                <tr>
+                    <td>complemento</td>
+                    <td>String</td>
+                    <td>Complemento do endereço do aluno</td>
+                </tr>
+                <tr>
+                    <td>bairro</td>
+                    <td>String</td>
+                    <td>Bairro do aluno</td>
+                </tr>
+                <tr>
+                    <td>cidade</td>
+                    <td>String</td>
+                    <td>Cidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>estado</td>
+                    <td>String</td>
+                    <td>Estado do aluno</td>
+                </tr>
+                <tr>
+                    <td>cep</td>
+                    <td>String</td>
+                    <td>CEP do endereço do aluno</td>
+                </tr>
+
+                <!-- Colégio de origem do aluno -->
+                <tr>
+                    <td>colegioOrigem.nome</td>
+                    <td>String</td>
+                    <td>Nome do colégio de origem do aluno</td>
+                </tr>
+                <tr>
+                    <td>colegioOrigem.cidade</td>
+                    <td>String</td>
+                    <td>Cidade do colégio de origem</td>
+                </tr>
+                <tr>
+                    <td>colegioOrigem.estado</td>
+                    <td>String</td>
+                    <td>Estado do colégio de origem</td>
+                </tr>
+                <tr>
+                    <td>colegioOrigem.telefone</td>
+                    <td>String</td>
+                    <td>Telefone do colégio de origem</td>
+                </tr>
+                <!-- Dados de saúde do aluno -->
+                <tr>
+                    <td>problemasSaude</td>
+                    <td>String</td>
+                    <td>Problemas de saúde do aluno</td>
+                </tr>
+                <tr>
+                    <td>remediosProibidos</td>
+                    <td>String</td>
+                    <td>Remédios proibidos para o aluno</td>
+                </tr>
+                <tr>
+                    <td>planoSaude</td>
+                    <td>String</td>
+                    <td>Plano de saúde do aluno</td>
+                </tr>
+                <tr>
+                    <td>telefoneEmergencia</td>
+                    <td>String</td>
+                    <td>Telefone de emergência para saúde</td>
+                </tr>
+                <tr>
+                    <td>procedimentosEmergencia</td>
+                    <td>String</td>
+                    <td>Procedimentos de emergência para o aluno</td>
+                </tr>
+                <tr>
+                    <td>tipoSangue</td>
+                    <td>String</td>
+                    <td>Tipo sanguíneo do aluno</td>
+                </tr>
+                <tr>
+                    <td>fatorRh</td>
+                    <td>String</td>
+                    <td>Fator Rh do tipo sanguíneo do aluno</td>
+                </tr>
+                <tr>
+                    <td>nomeMedico</td>
+                    <td>String</td>
+                    <td>Nome do médico do aluno</td>
+                </tr>
+                <tr>
+                    <td>telefoneMedico</td>
+                    <td>String</td>
+                    <td>Telefone do médico do aluno</td>
+                </tr>
+                <!-- Dados do Pai -->
+                <tr>
+                    <td>nome</td>
+                    <td>String</td>
+                    <td>Nome do pai do aluno</td>
+                </tr>
+                <tr>
+                    <td>vivo</td>
+                    <td>Boolean</td>
+                    <td>Se o pai do aluno está vivo</td>
+                </tr>
+                <tr>
+                    <td>trabalho.local</td>
+                    <td>String</td>
+                    <td>Local de trabalho do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.endereco</td>
+                    <td>String</td>
+                    <td>Endereço de trabalho do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.profissao</td>
+                    <td>String</td>
+                    <td>Profissão do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.graduacao</td>
+                    <td>String</td>
+                    <td>Graduação do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.telefone</td>
+                    <td>String</td>
+                    <td>Telefone do trabalho do pai</td>
+                </tr>
+                <!-- Dados da Mãe -->
+                <tr>
+                    <td>dadosMae.nome</td>
+                    <td>String</td>
+                    <td>Nome da mãe do aluno</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.viva</td>
+                    <td>Boolean</td>
+                    <td>Se a mãe do aluno está viva</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.local</td>
+                    <td>String</td>
+                    <td>Local de trabalho da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.endereco</td>
+                    <td>String</td>
+                    <td>Endereço de trabalho da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.profissao</td>
+                    <td>String</td>
+                    <td>Profissão da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.graduacao</td>
+                    <td>String</td>
+                    <td>Graduação da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.telefone</td>
+                    <td>String</td>
+                    <td>Telefone do trabalho da mãe</td>
+                </tr>
+                <!-- Dados do Responsável -->
+                <tr>
+                    <td>nome</td>
+                    <td>String</td>
+                    <td>Nome do responsável pelo aluno</td>
+                </tr>
+                <tr>
+                    <td>cpf</td>
+                    <td>String</td>
+                    <td>CPF do responsável pelo aluno</td>
+                </tr>
+                <tr>
+                    <td>trabalho.local</td>
+                    <td>String</td>
+                    <td>Local de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.endereco</td>
+                    <td>String</td>
+                    <td>Endereço de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.profissao</td>
+                    <td>String</td>
+                    <td>Profissão do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.graduacao</td>
+                    <td>String</td>
+                    <td>Graduação do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.orgao</td>
+                    <td>String</td>
+                    <td>Órgão onde o responsável trabalha</td>
+                </tr>
+                <tr>
+                    <td>trabalho.uf</td>
+                    <td>String</td>
+                    <td>Unidade federativa do local de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.telefoneTrabalho</td>
+                    <td>String</td>
+                    <td>Telefone de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.ramal</td>
+                    <td>String</td>
+                    <td>Ramal do telefone de trabalho do responsável</td>
+                </tr>
+                <!-- Endereço Residencial do Responsável -->
+                <tr>
+                    <td>rua</td>
+                    <td>String</td>
+                    <td>Rua do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>numero</td>
+                    <td>String</td>
+                    <td>Número da residência do responsável</td>
+                </tr>
+                <tr>
+                    <td>complemento</td>
+                    <td>String</td>
+                    <td>Complemento do endereço do responsável</td>
+                </tr>
+                <tr>
+                    <td>bairro</td>
+                    <td>String</td>
+                    <td>Bairro do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>cidade</td>
+                    <td>String</td>
+                    <td>Cidade do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>estado</td>
+                    <td>String</td>
+                    <td>Estado do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>cep</td>
+                    <td>String</td>
+                    <td>CEP do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>telefone</td>
+                    <td>String</td>
+                    <td>Telefone residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>celular</td>
+                    <td>String</td>
+                    <td>Celular do responsável</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET /alunos</h2>
+            <p>Lista todos os alunos.</p>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET /alunos/:id</h2>
+            <p>Obtém os detalhes de um aluno específico pelo ID.</p>
+        </div>
+
+        <!-- PUT /alunos/{id} - Atualizar um aluno específico -->
+        <div class="endpoint">
+            <h2>PUT /alunos/{id}</h2>
+            <p>Atualiza os dados de um aluno específico pelo ID.</p>
+            <table class="table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                <!-- Aluno -->
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>ID do aluno a ser atualizado</td>
+                </tr>
+                <tr>
+                    <td>matricula</td>
+                    <td>String</td>
+                    <td>Número de matrícula do aluno</td>
+                </tr>
+                <tr>
+                    <td>nome</td>
+                    <td>String</td>
+                    <td>Nome completo do aluno</td>
+                </tr>
+                <tr>
+                    <td>turma</td>
+                    <td>String</td>
+                    <td>Turma do aluno</td>
+                </tr>
+                <tr>
+                    <td>curso</td>
+                    <td>String</td>
+                    <td>Curso em que o aluno está matriculado</td>
+                </tr>
+                <tr>
+                    <td>turno</td>
+                    <td>String</td>
+                    <td>Turno do aluno</td>
+                </tr>
+
+                <tr>
+                    <td>sexo</td>
+                    <td>String</td>
+                    <td>Sexo do aluno</td>
+                </tr>
+                <tr>
+                    <td>nascimento</td>
+                    <td>Date</td>
+                    <td>Data de nascimento do aluno</td>
+                </tr>
+                <tr>
+                    <td>nacionalidade</td>
+                    <td>String</td>
+                    <td>Nacionalidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>naturalidade</td>
+                    <td>String</td>
+                    <td>Naturalidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>religiao</td>
+                    <td>String</td>
+                    <td>Religião do aluno</td>
+                </tr>
+                <tr>
+                    <td>telefone</td>
+                    <td>String</td>
+                    <td>Telefone de contato do aluno</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Email do aluno</td>
+                </tr>
+                <tr>
+                    <td>identidade</td>
+                    <td>String</td>
+                    <td>Número da identidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>cpf</td>
+                    <td>String</td>
+                    <td>CPF do aluno</td>
+                </tr>
+                <!-- Endereço do aluno -->
+                <tr>
+                    <td>rua</td>
+                    <td>String</td>
+                    <td>Rua do endereço do aluno</td>
+                </tr>
+                <tr>
+                    <td>numero</td>
+                    <td>String</td>
+                    <td>Número da residência do aluno</td>
+                </tr>
+                <tr>
+                    <td>complemento</td>
+                    <td>String</td>
+                    <td>Complemento do endereço do aluno</td>
+                </tr>
+                <tr>
+                    <td>bairro</td>
+                    <td>String</td>
+                    <td>Bairro do aluno</td>
+                </tr>
+                <tr>
+                    <td>cidade</td>
+                    <td>String</td>
+                    <td>Cidade do aluno</td>
+                </tr>
+                <tr>
+                    <td>estado</td>
+                    <td>String</td>
+                    <td>Estado do aluno</td>
+                </tr>
+                <tr>
+                    <td>cep</td>
+                    <td>String</td>
+                    <td>CEP do endereço do aluno</td>
+                </tr>
+
+                <!-- Colégio de origem do aluno -->
+                <tr>
+                    <td>colegioOrigem.nome</td>
+                    <td>String</td>
+                    <td>Nome do colégio de origem do aluno</td>
+                </tr>
+                <tr>
+                    <td>colegioOrigem.cidade</td>
+                    <td>String</td>
+                    <td>Cidade do colégio de origem</td>
+                </tr>
+                <tr>
+                    <td>colegioOrigem.estado</td>
+                    <td>String</td>
+                    <td>Estado do colégio de origem</td>
+                </tr>
+                <tr>
+                    <td>colegioOrigem.telefone</td>
+                    <td>String</td>
+                    <td>Telefone do colégio de origem</td>
+                </tr>
+                <!-- Dados de saúde do aluno -->
+                <tr>
+                    <td>problemasSaude</td>
+                    <td>String</td>
+                    <td>Problemas de saúde do aluno</td>
+                </tr>
+                <tr>
+                    <td>remediosProibidos</td>
+                    <td>String</td>
+                    <td>Remédios proibidos para o aluno</td>
+                </tr>
+                <tr>
+                    <td>planoSaude</td>
+                    <td>String</td>
+                    <td>Plano de saúde do aluno</td>
+                </tr>
+                <tr>
+                    <td>telefoneEmergencia</td>
+                    <td>String</td>
+                    <td>Telefone de emergência para saúde</td>
+                </tr>
+                <tr>
+                    <td>procedimentosEmergencia</td>
+                    <td>String</td>
+                    <td>Procedimentos de emergência para o aluno</td>
+                </tr>
+                <tr>
+                    <td>tipoSangue</td>
+                    <td>String</td>
+                    <td>Tipo sanguíneo do aluno</td>
+                </tr>
+                <tr>
+                    <td>fatorRh</td>
+                    <td>String</td>
+                    <td>Fator Rh do tipo sanguíneo do aluno</td>
+                </tr>
+                <tr>
+                    <td>nomeMedico</td>
+                    <td>String</td>
+                    <td>Nome do médico do aluno</td>
+                </tr>
+                <tr>
+                    <td>telefoneMedico</td>
+                    <td>String</td>
+                    <td>Telefone do médico do aluno</td>
+                </tr>
+                <!-- Dados do Pai -->
+                <tr>
+                    <td>nome</td>
+                    <td>String</td>
+                    <td>Nome do pai do aluno</td>
+                </tr>
+                <tr>
+                    <td>vivo</td>
+                    <td>Boolean</td>
+                    <td>Se o pai do aluno está vivo</td>
+                </tr>
+                <tr>
+                    <td>trabalho.local</td>
+                    <td>String</td>
+                    <td>Local de trabalho do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.endereco</td>
+                    <td>String</td>
+                    <td>Endereço de trabalho do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.profissao</td>
+                    <td>String</td>
+                    <td>Profissão do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.graduacao</td>
+                    <td>String</td>
+                    <td>Graduação do pai</td>
+                </tr>
+                <tr>
+                    <td>trabalho.telefone</td>
+                    <td>String</td>
+                    <td>Telefone do trabalho do pai</td>
+                </tr>
+                <!-- Dados da Mãe -->
+                <tr>
+                    <td>dadosMae.nome</td>
+                    <td>String</td>
+                    <td>Nome da mãe do aluno</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.viva</td>
+                    <td>Boolean</td>
+                    <td>Se a mãe do aluno está viva</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.local</td>
+                    <td>String</td>
+                    <td>Local de trabalho da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.endereco</td>
+                    <td>String</td>
+                    <td>Endereço de trabalho da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.profissao</td>
+                    <td>String</td>
+                    <td>Profissão da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.graduacao</td>
+                    <td>String</td>
+                    <td>Graduação da mãe</td>
+                </tr>
+                <tr>
+                    <td>dadosMae.trabalho.telefone</td>
+                    <td>String</td>
+                    <td>Telefone do trabalho da mãe</td>
+                </tr>
+                <!-- Dados do Responsável -->
+                <tr>
+                    <td>nome</td>
+                    <td>String</td>
+                    <td>Nome do responsável pelo aluno</td>
+                </tr>
+                <tr>
+                    <td>cpf</td>
+                    <td>String</td>
+                    <td>CPF do responsável pelo aluno</td>
+                </tr>
+                <tr>
+                    <td>trabalho.local</td>
+                    <td>String</td>
+                    <td>Local de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.endereco</td>
+                    <td>String</td>
+                    <td>Endereço de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.profissao</td>
+                    <td>String</td>
+                    <td>Profissão do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.graduacao</td>
+                    <td>String</td>
+                    <td>Graduação do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.orgao</td>
+                    <td>String</td>
+                    <td>Órgão onde o responsável trabalha</td>
+                </tr>
+                <tr>
+                    <td>trabalho.uf</td>
+                    <td>String</td>
+                    <td>Unidade federativa do local de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.telefoneTrabalho</td>
+                    <td>String</td>
+                    <td>Telefone de trabalho do responsável</td>
+                </tr>
+                <tr>
+                    <td>trabalho.ramal</td>
+                    <td>String</td>
+                    <td>Ramal do telefone de trabalho do responsável</td>
+                </tr>
+                <!-- Endereço Residencial do Responsável -->
+                <tr>
+                    <td>rua</td>
+                    <td>String</td>
+                    <td>Rua do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>numero</td>
+                    <td>String</td>
+                    <td>Número da residência do responsável</td>
+                </tr>
+                <tr>
+                    <td>complemento</td>
+                    <td>String</td>
+                    <td>Complemento do endereço do responsável</td>
+                </tr>
+                <tr>
+                    <td>bairro</td>
+                    <td>String</td>
+                    <td>Bairro do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>cidade</td>
+                    <td>String</td>
+                    <td>Cidade do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>estado</td>
+                    <td>String</td>
+                    <td>Estado do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>cep</td>
+                    <td>String</td>
+                    <td>CEP do endereço residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>telefone</td>
+                    <td>String</td>
+                    <td>Telefone residencial do responsável</td>
+                </tr>
+                <tr>
+                    <td>celular</td>
+                    <td>String</td>
+                    <td>Celular do responsável</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="endpoint">
+            <h2>DELETE /alunos/:id</h2>
+            <p>Remove um aluno específico pelo ID.</p>
+        </div>
+
+    </div>
+</body>
+</html>
