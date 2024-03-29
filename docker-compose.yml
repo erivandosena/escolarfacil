@@ -1,0 +1,36 @@
+# docker compose build --no-cache --progress=plain && docker compose up >> UpContainersDocker.txt
+# backend Node.js | frontend React | mongoDB
+
+services:
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/escolar
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend/src:/app/src # Montagem durante o desenvolvimento
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src # Montagem durante o desenvolvimento
+
+  mongo:
+    container_name: mongo
+    image: mongo:7.0
+    volumes:
+      - mongo-db:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo-db:
